@@ -1,0 +1,10 @@
+{#-
+    archive_link_sidebar.html
+    ~~~~~~~~~~~~~~~~~~~~~~~~~
+-#}
+
+{%- set archive_title = archive_title is not defined and ' Blog Archive ' or archive_title -%}
+
+<div class="widget">
+    <h1><a href="{{ pathto('archive') }}">{{ archive_title }} &raquo;</a></h1>
+</div>
