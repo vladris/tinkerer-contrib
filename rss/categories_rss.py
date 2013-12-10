@@ -24,7 +24,7 @@ def generate_feeds(app):
     env = app.builder.env
     categories = env.filing["categories"]
 
-    for category_name, posts in env.filing["categories"].iteritems():
+    for category_name, posts in env.filing["categories"].items():
         for name, context, template in rss.generate_feed(app, category_name, posts):
             yield ("rss/categories/%s" % name, context, template)
 
