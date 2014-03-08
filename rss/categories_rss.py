@@ -11,6 +11,8 @@
     :license: BSD license
 '''
 import rss
+from tinkerer import utils
+
 
 def html_collect_pages(app):
     '''
@@ -26,7 +28,8 @@ def generate_feeds(app):
 
     for category_name, posts in env.filing["categories"].items():
         for name, context, template in rss.generate_feed(app, category_name, posts):
-            yield ("rss/categories/%s" % name, context, template)
+            slug = utils.name_from_title(name)
+            yield ("rss/categories/%s" % slug, context, template)
 
 
 def setup(app):
