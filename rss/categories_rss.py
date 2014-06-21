@@ -10,7 +10,7 @@
     :copyright: Copyright 2013 by Atamert Ölçgen
     :license: BSD license
 '''
-from rss import rss
+import rss
 from tinkerer import utils
 
 
