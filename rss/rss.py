@@ -55,4 +55,4 @@ def generate_feed(app, feed_name, posts):
     # feed pubDate is equal to latest post pubDate
     context["pubDate"] = context["items"][0]["pubDate"]
 
-    yield (feed_name, context, "rss.html")
+    return (feed_name, context, "rss.html")
